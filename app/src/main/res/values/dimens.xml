@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_navigationbar">101dp</dimen>
+    <dimen name="navigationbar_logo_layout_width">140dp</dimen>
+    <dimen name="navigationbar_logo_layout_height">33dp</dimen>
+    <dimen name="navigationbar_logo_marginTop">10dp</dimen>
+    <dimen name="navigationbar_back_marginStart">21dp</dimen>
+</resources>
