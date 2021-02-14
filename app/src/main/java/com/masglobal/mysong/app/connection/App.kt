@@ -1,4 +1,4 @@
-package com.masglobal.mysong.app
+package com.masglobal.mysong.app.connection
 
 import android.app.Application
 import com.masglobal.mysong.app.di.AppComponent

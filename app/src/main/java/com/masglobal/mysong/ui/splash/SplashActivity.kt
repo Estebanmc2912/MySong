@@ -1,15 +1,13 @@
 package com.masglobal.mysong.ui.splash
 
 import android.os.Bundle
-import android.os.Handler
 import com.masglobal.mysong.R
-import com.masglobal.mysong.app.App
+import com.masglobal.mysong.app.connection.App
 import com.masglobal.mysong.ui.common.BaseActivity
 import com.masglobal.mysong.ui.splash.di.DaggerSplashComponent
 import com.masglobal.mysong.ui.splash.di.SplashComponent
 import com.masglobal.mysong.ui.splash.di.SplashModule
 import javax.inject.Inject
-import kotlinx.android.synthetic.main.activity_splashscreen.*
 
 class SplashActivity : BaseActivity<SplashContract.View, SplashPresenter>(), SplashContract.View {
 

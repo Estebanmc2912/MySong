@@ -1,6 +1,6 @@
 package com.masglobal.mysong.app.di
 
-import com.masglobal.mysong.app.App
+import com.masglobal.mysong.app.connection.App
 import dagger.BindsInstance
 import dagger.Component
 import retrofit2.Retrofit

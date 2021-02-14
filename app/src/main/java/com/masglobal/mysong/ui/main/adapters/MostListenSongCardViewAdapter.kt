@@ -1,4 +1,6 @@
 package com.masglobal.mysong.ui.main.adapters
 
-class MostListenSongCardViewAdapter {
+import androidx.recyclerview.widget.RecyclerView
+
+class MostListenSongCardViewAdapter  {
 }

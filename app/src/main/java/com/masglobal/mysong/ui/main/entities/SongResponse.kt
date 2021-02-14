@@ -1,4 +1,5 @@
 package com.masglobal.mysong.ui.main.entities
 
-class SongResponse {
-}
+import com.google.gson.annotations.SerializedName
+
+data class SongResponse (@SerializedName("results") var results : List<Song>)

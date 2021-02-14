@@ -1,4 +1,4 @@
-package com.masglobal.mysong.app.di.connection
+package com.masglobal.mysong.app.connection
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
