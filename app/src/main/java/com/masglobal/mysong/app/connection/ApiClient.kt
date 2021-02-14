@@ -1,18 +1,25 @@
 package com.masglobal.mysong.app.di.connection
 
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiClient {
 
+class ApiClient {
     private var retrofit: Retrofit? = null
 
-
-    public fun getClient():Retrofit{
+    fun getClient():Retrofit{
         if (retrofit == null) {
+
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
+
             retrofit = Retrofit.Builder()
                 .baseUrl(ApiEndpoint.BASEURL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
                 .build()
         }
         return retrofit!!
