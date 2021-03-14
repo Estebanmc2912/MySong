@@ -25,4 +25,22 @@ class ApiClient {
         return retrofit!!
     }
 
+    fun getClientRSS():Retrofit{
+        if (retrofit == null) {
+
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
+
+            retrofit = Retrofit.Builder()
+                    .baseUrl(ApiEndpoint.BASEURLRSS)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(client)
+                    .build()
+        }
+        return retrofit!!
+    }
+
+
+
 }

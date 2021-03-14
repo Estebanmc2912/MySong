@@ -1,6 +1,7 @@
 package com.masglobal.mysong.ui.main.adapters
 
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +10,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.masglobal.mysong.R
 import com.masglobal.mysong.ui.main.MainActivity
 import com.masglobal.mysong.ui.main.entities.Song
+import com.masglobal.mysong.ui.main.search.SearchFragment
 import com.masglobal.mysong.ui.main.utils.UtilsConversions
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.song_item.view.*
 
 
-class SearchSongCardViewAdapter (activity: MainActivity, onItemClickListener : OnItemClickListener) : RecyclerView.Adapter<SearchSongCardViewAdapter.ViewHolder> () {
+class SearchSongAdapter (fragment: SearchFragment, onItemClickListener : OnItemClickListener) : RecyclerView.Adapter<SearchSongAdapter.ViewHolder> () {
 
-    private var songsList = activity.listSongsMutableList
+    private var songsList = fragment.listSongsMutableList
     private var onItemClickListener = onItemClickListener
 
     interface OnItemClickListener {
@@ -31,7 +33,7 @@ class SearchSongCardViewAdapter (activity: MainActivity, onItemClickListener : O
         var iv_artwork100: ImageView? = itemView.iv_song_item_albumpicture
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchSongCardViewAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchSongAdapter.ViewHolder {
        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.song_item, parent, false))
     }
 

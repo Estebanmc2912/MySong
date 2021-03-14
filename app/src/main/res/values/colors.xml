@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red_app">#FC1933</color>
     <color name="red_dark_app">#B00326</color>
+    <color name="grey_app">#ACB1C0</color>
+    <color name="colorGreen">#4BB543</color>
 </resources>
