@@ -17,8 +17,8 @@
     app:layout_constraintTop_toTopOf="parent"
         android:background="@color/red_app">
 
-    <ImageView
-    android:id="@+id/iv_sdevice_back"
+    <ImageButton
+    android:id="@+id/iv_main_favourites"
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:layout_marginStart="@dimen/navigationbar_back_marginStart"
@@ -26,8 +26,8 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/ic_heart"
-    app:tint="@color/white" />
+    android:background="@drawable/ic_heart"
+    android:backgroundTint="@color/white"/>
 
         <ImageView
     android:id="@+id/tv_sdevice_title"
@@ -40,19 +40,24 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_main_user"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="@dimen/navigationbar_logo_marginTop"
             android:layout_marginEnd="@dimen/navigationbar_back_marginStart"
+            android:layerType="software"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:outlineAmbientShadowColor="@color/red_app"
+            android:outlineSpotShadowColor="@color/red_app"
+            app:strokeColor="@color/white"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImageView"
             android:src="@drawable/ic_user"
             app:tint="@color/white">
 
-        </ImageView>
+        </com.google.android.material.imageview.ShapeableImageView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,8 +1,9 @@
-package com.masglobal.mysong.app.database
+package com.masglobal.mysong.app.database.entitiy
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.masglobal.mysong.ui.main.entities.SongEntity
 
 @Entity(tableName = "users")
 data class UserEntity (
@@ -16,4 +17,6 @@ data class UserEntity (
     var password : String,
 
     @ColumnInfo(name = "image")
-    var image: String)
+    var image: String,
+
+    )

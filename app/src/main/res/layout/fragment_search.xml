@@ -60,12 +60,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/sv_main"
                 android:layout_width="0dp"
+                android:paddingStart="-16dp"
+                android:background="@drawable/shape_song_item"
+                android:backgroundTint="@color/red_app"
+                android:fontFamily="@font/proxima_nova_sbold"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                app:queryBackground="@android:color/transparent"
+                android:queryHint="hint"
+                app:queryHint="Search your favourite artist"
+                app:defaultQueryHint="Search your favourite artist"
+                android:iconifiedByDefault="false"
+                app:iconifiedByDefault="false"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/et_main_filter"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,9 +90,12 @@
 
             <EditText
                 android:id="@+id/et_main_filter"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="@color/white"
                 android:hint="Filter"
+                android:background="@drawable/shape_background_red"
                 android:inputType="number"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -172,7 +172,7 @@ class SearchFragment : Fragment(), SearchSongAdapter.OnItemClickListener{
 
             Handler(Looper.getMainLooper()).postDelayed({
                 if(!(::adapterSearch.isInitialized)){
-                    adapterSearch = SearchSongAdapter(this, this)
+                    adapterSearch = SearchSongAdapter(requireActivity(),this, this)
                     v.rv_songssearch.adapter = adapterSearch
                     adapterSearch!!.notifyDataSetChanged()
                 }
@@ -183,7 +183,7 @@ class SearchFragment : Fragment(), SearchSongAdapter.OnItemClickListener{
         }else{
             if(!(::adapterSearch.isInitialized)){
                 listSongsMutableList = songsList
-                adapterSearch = SearchSongAdapter(this, this)
+                adapterSearch = SearchSongAdapter(requireActivity(),this, this)
                 v.rv_songssearch.adapter = adapterSearch
                 adapterSearch!!.notifyDataSetChanged()
             }
@@ -200,7 +200,7 @@ class SearchFragment : Fragment(), SearchSongAdapter.OnItemClickListener{
     override fun onSongItemClicked(song: Song?, position: Int) {
         var list : ArrayList<SongEntity> = arrayListOf()
         for (itemCount in 0..(userFilter?.minus(1))!!){
-            var entity = SongEntity(
+            var entity = SongEntity(0,"",
                     songsList[itemCount].trackName,
                     songsList[itemCount].artistName,
                     songsList[itemCount].artworkUrl100,

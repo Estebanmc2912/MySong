@@ -7,20 +7,24 @@
     android:layout_height="match_parent"
     android:background="@color/red_app">
 
-
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:elevation="10dp"
         android:id="@+id/iv_login_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_marginTop="30dp"
+        android:outlineAmbientShadowColor="@color/red_app"
+        android:outlineSpotShadowColor="@color/red_app"
+        android:scaleType="centerCrop"
+        app:strokeColor="@color/white"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImageView"
         android:background="@drawable/ic_headphones"
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </ImageView>
+    </com.google.android.material.imageview.ShapeableImageView>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

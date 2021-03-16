@@ -95,16 +95,16 @@
 
             </TextView>
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_song_item_favorite"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/ic_heart"
+                android:background="@drawable/selector_heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_song_item_genre">
 
-            </Button>
+            </ImageButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
