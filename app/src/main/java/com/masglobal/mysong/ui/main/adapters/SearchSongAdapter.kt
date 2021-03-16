@@ -1,7 +1,6 @@
 package com.masglobal.mysong.ui.main.adapters
 
 
-import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,15 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.ColumnInfo
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.masglobal.mysong.R
 import com.masglobal.mysong.ui.main.IMainActivity
-import com.masglobal.mysong.ui.main.MainActivity
 import com.masglobal.mysong.ui.main.entities.Song
-import com.masglobal.mysong.ui.main.entities.SongEntity
-import com.masglobal.mysong.ui.main.search.SearchFragment
+import com.masglobal.mysong.app.database.entitiy.SongEntity
+import com.masglobal.mysong.ui.main.home.search.SearchFragment
 import com.masglobal.mysong.ui.main.utils.UtilsConversions
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.song_item.view.*

@@ -31,13 +31,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.login.LoginActivity"
+        <activity android:name="com.masglobal.mysong.ui.main.user.login.LoginActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".ui.main.register.RegisterActivity"
+        <activity android:name="com.masglobal.mysong.ui.main.user.register.RegisterActivity"
         android:screenOrientation="portrait"></activity>
 
         <activity android:name=".ui.main.favourite.FavouriteActivity">
         </activity>
+        <activity android:name="com.masglobal.mysong.ui.main.user.edit.EditActivity"></activity>
+
 
     </application>
 

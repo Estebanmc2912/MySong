@@ -52,10 +52,11 @@
             app:layout_constraintTop_toTopOf="parent"
             android:outlineAmbientShadowColor="@color/red_app"
             android:outlineSpotShadowColor="@color/red_app"
+            android:scaleType="centerCrop"
             app:strokeColor="@color/white"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImageView"
-            android:src="@drawable/ic_user"
-            app:tint="@color/white">
+            android:background="@drawable/ic_user"
+            android:backgroundTint="@color/white">
 
         </com.google.android.material.imageview.ShapeableImageView>
 

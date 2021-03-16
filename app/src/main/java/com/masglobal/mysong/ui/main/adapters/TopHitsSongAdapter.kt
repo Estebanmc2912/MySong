@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.masglobal.mysong.R
 import com.masglobal.mysong.ui.main.entities.Song
-import com.masglobal.mysong.ui.main.tophits.TopHitsFragment
+import com.masglobal.mysong.ui.main.home.tophits.TopHitsFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.songhit_item.view.*
 

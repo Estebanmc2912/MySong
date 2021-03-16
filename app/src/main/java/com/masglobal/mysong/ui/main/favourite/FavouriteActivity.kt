@@ -1,20 +1,14 @@
 package com.masglobal.mysong.ui.main.favourite
 
-import android.content.Context
 import android.os.Bundle
 import android.os.Looper
-import android.os.PersistableBundle
-import android.view.View
-import android.widget.GridLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.masglobal.mysong.R
 import com.masglobal.mysong.app.database.UserDatabase
 import com.masglobal.mysong.app.database.dao.UserDao
 import com.masglobal.mysong.ui.main.adapters.FavouritesSongAdapter
-import com.masglobal.mysong.ui.main.adapters.TopHitsSongAdapter
-import com.masglobal.mysong.ui.main.entities.Song
-import com.masglobal.mysong.ui.main.entities.SongEntity
+import com.masglobal.mysong.app.database.entitiy.SongEntity
 import com.masglobal.mysong.ui.main.user.UserOptions
 import com.masglobal.mysong.ui.main.utils.UtilsPopUps
 import kotlinx.android.synthetic.main.activity_favourites.*

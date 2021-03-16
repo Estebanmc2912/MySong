@@ -11,12 +11,16 @@ import androidx.fragment.app.Fragment
 import com.masglobal.mysong.R
 import com.masglobal.mysong.app.database.UserDatabase
 import com.masglobal.mysong.app.database.dao.UserDao
-import com.masglobal.mysong.ui.main.entities.SongEntity
+import com.masglobal.mysong.ui.main.user.edit.EditActivity
+import com.masglobal.mysong.app.database.entitiy.SongEntity
+import com.masglobal.mysong.app.database.entitiy.UserEntity
 import com.masglobal.mysong.ui.main.favourite.FavouriteActivity
-import com.masglobal.mysong.ui.main.login.LoginActivity
-import com.masglobal.mysong.ui.main.search.SearchFragment
-import com.masglobal.mysong.ui.main.tophits.TopHitsFragment
+import com.masglobal.mysong.ui.main.home.admin.AdminFragment
+import com.masglobal.mysong.ui.main.user.login.LoginActivity
+import com.masglobal.mysong.ui.main.home.search.SearchFragment
+import com.masglobal.mysong.ui.main.home.tophits.TopHitsFragment
 import com.masglobal.mysong.ui.main.user.UserOptions
+import com.masglobal.mysong.ui.main.user.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -34,18 +38,40 @@ class MainActivity : AppCompatActivity(), IMainActivity {
         dao = UserDatabase.getInstance(applicationContext).userDao()
         val searchFragment = SearchFragment()
         val topHitsFragment = TopHitsFragment()
+        val adminFragment = AdminFragment()
 
         makeCurrentFragment(searchFragment)
+
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_search -> makeCurrentFragment(searchFragment)
                 R.id.ic_tophits -> makeCurrentFragment(topHitsFragment)
+                R.id.ic_users -> makeCurrentFragment(adminFragment)
             }
             true
         }
 
+        addAdmin()
         setUser()
+
+    }
+
+    private fun addAdmin() {
+
+        val thread = Thread(Runnable() {
+            kotlin.run {
+                Looper.prepare()
+                dao.registerUser(UserEntity(0,"admin_user","qwerty123$","","admin"))
+                try {
+                    Thread.sleep(10)
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                }
+                Looper.loop()
+            }
+        })
+        thread!!.start()
 
     }
 
@@ -61,13 +87,18 @@ class MainActivity : AppCompatActivity(), IMainActivity {
 
     private fun setListenersLog() {
         iv_main_user.setOnClickListener {
-            //startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-            Toast.makeText(this,"Edit profile comimng soon", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@MainActivity, EditActivity::class.java))
+
         }
 
         iv_main_favourites.setOnClickListener {
             startActivity(Intent(this@MainActivity, FavouriteActivity::class.java))
         }
+
+        if(UserOptions.role == "admin"){
+            bottom_navigation.menu.getItem(2).isVisible = true
+        }
+
     }
 
 
@@ -108,6 +139,8 @@ class MainActivity : AppCompatActivity(), IMainActivity {
                     runOnUiThread {
                         if (userEntity.image.isNotEmpty()) {
                             iv_main_user.setImageURI(Uri.parse(userEntity.image))
+                            iv_main_user.clipToOutline = true
+                            iv_main_user.strokeWidth = 10f
                             iv_main_user.invalidate()
                         }
 
@@ -152,4 +185,11 @@ class MainActivity : AppCompatActivity(), IMainActivity {
 
     }
 
+    override fun onCLickAddUserAdmin() {
+        startActivity(Intent(this@MainActivity, RegisterActivity::class.java).putExtra("admin","admin"))
+    }
+
+    override fun onBackPressed() {
+        this.finish()
+    }
 }

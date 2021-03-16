@@ -1,6 +1,5 @@
 package com.masglobal.mysong.ui.main.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,16 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.masglobal.mysong.R
-import com.masglobal.mysong.ui.main.IMainActivity
-import com.masglobal.mysong.ui.main.entities.Song
-import com.masglobal.mysong.ui.main.entities.SongEntity
-import com.masglobal.mysong.ui.main.search.SearchFragment
-import com.masglobal.mysong.ui.main.tophits.TopHitsFragment
-import com.masglobal.mysong.ui.main.utils.UtilsConversions
+import com.masglobal.mysong.app.database.entitiy.SongEntity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.favourite_item.view.*
-import kotlinx.android.synthetic.main.song_item.view.*
-import kotlinx.android.synthetic.main.songhit_item.view.*
 
 class FavouritesSongAdapter (songsList: ArrayList<SongEntity>, onItemClickListener : FavouritesSongAdapter.OnItemClickListener) : RecyclerView.Adapter<FavouritesSongAdapter.ViewHolder> () {
 

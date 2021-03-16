@@ -14,7 +14,22 @@
         android:layout_marginEnd="@dimen/navigationbar_back_marginStart"
         app:layout_constraintTop_toBottomOf="@+id/cl_sdevice_navigationbar">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+            android:src="@drawable/ic_add"
+            android:outlineSpotShadowColor="@color/red_app"
+            app:rippleColor="@color/red_app"
+            android:outlineAmbientShadowColor="@color/red_app"
+            android:backgroundTint="@color/red_app"/>
+
         <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +44,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_songssearch"
+                    android:id="@+id/rv_admin_usersssearch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -38,7 +53,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/pb_rv_search"
+                    android:id="@+id/pb_rv_admin"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
@@ -47,7 +62,7 @@
                     android:indeterminateTintMode="src_atop"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rv_songssearch" />
+                    app:layout_constraintTop_toBottomOf="@id/rv_admin_usersssearch" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -64,7 +79,7 @@
             android:layout_marginTop="10dp">
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/sv_main"
+                android:id="@+id/sv_admin_users"
                 android:layout_width="0dp"
                 android:paddingStart="-16dp"
                 android:background="@drawable/shape_song_item"
@@ -75,8 +90,8 @@
                 android:textSize="25dp"
                 app:queryBackground="@android:color/transparent"
                 android:queryHint="hint"
-                app:queryHint="Search your favourite artist"
-                app:defaultQueryHint="Search your favourite artist"
+                app:queryHint="Search users"
+                app:defaultQueryHint="Search users"
                 android:iconifiedByDefault="false"
                 app:iconifiedByDefault="false"
                 android:layout_height="wrap_content"

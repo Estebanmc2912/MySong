@@ -1,4 +1,4 @@
-package com.masglobal.mysong.ui.main.entities
+package com.masglobal.mysong.app.database.entitiy
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

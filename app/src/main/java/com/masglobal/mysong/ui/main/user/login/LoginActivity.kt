@@ -66,6 +66,7 @@ class LoginActivity: AppCompatActivity()  {
                                     Toast.makeText(context, "Login Succesful!",Toast.LENGTH_LONG).show()
                                     UserOptions.isLogged = true
                                     UserOptions.userId = userEntity.userId
+                                    UserOptions.id = userEntity.id
                                     startActivity(Intent(context, MainActivity::class.java))
                                     (context as Activity).finish()
                                     Looper.loop()

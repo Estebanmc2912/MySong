@@ -3,7 +3,7 @@ package com.masglobal.mysong.app.database.dao
 import androidx.room.Embedded
 import androidx.room.Relation
 import com.masglobal.mysong.app.database.entitiy.UserEntity
-import com.masglobal.mysong.ui.main.entities.SongEntity
+import com.masglobal.mysong.app.database.entitiy.SongEntity
 
 data class UserWithSongsDao (
 

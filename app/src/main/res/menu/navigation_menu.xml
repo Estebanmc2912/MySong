@@ -13,5 +13,12 @@
         android:title="Top Hits"
         />
 
+    <item
+        android:id="@+id/ic_users"
+        android:icon="@drawable/ic_user"
+        android:title="Users"
+        android:visible="false">
+
+    </item>
 
 </menu>
